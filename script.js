@@ -16,7 +16,7 @@ class Paper {
     currentPaperY=0;
 
     init(paper){
-        paper.addEventListener("mousedown",(e)=>{
+        paper.addEventListener("pointerdown",(e)=>{
             this.holdingPaper = true;
             paper.style.zIndex = highestZ;
             highestZ+=1;
@@ -30,7 +30,7 @@ class Paper {
             }
         })
 
-        document.addEventListener('mousemove',(e)=>{
+        document.addEventListener('pointermove',(e)=>{
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
 
@@ -50,7 +50,7 @@ class Paper {
             }
     })
 
-            document.addEventListener('mouseup',(e)=>{
+            document.addEventListener('pointerup',(e)=>{
                 console.log('Mouse is released');
                 this.holdingPaper = false;
             })
